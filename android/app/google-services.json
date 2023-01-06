@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "218595487227",
+    "project_id": "expense-tracker-flutter-2ef3b",
+    "storage_bucket": "expense-tracker-flutter-2ef3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218595487227:android:fe45770bc9427965dbaf5e",
+        "android_client_info": {
+          "package_name": "com.example.expense_tracker_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218595487227-5mqvr8f03o3ohn5mbl5q348p4f05i33o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.expense_tracker_flutter",
+            "certificate_hash": "9ea15a1306551988f96994b5efe56afe21216cb0"
+          }
+        },
+        {
+          "client_id": "218595487227-05ki0rnv2mp70l88861gt6p7d0velhjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0Vq5cZM2dKhAB3hocqgbRujCP5ezuIII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218595487227-05ki0rnv2mp70l88861gt6p7d0velhjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
