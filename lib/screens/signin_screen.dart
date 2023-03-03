@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:expense_tracker_flutter/widgets/authentication_button.dart';
 import 'package:expense_tracker_flutter/widgets/email_field.dart';
 import 'package:expense_tracker_flutter/widgets/password_field.dart';
+import 'package:expense_tracker_flutter/widgets/authentication_button.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   String? email;
   String? password;
   final _auth = FirebaseAuth.instance;
@@ -25,11 +25,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Sign Up Screen'),
-          backgroundColor: Colors.blueAccent,
+          title: const Text('Sign In Screen'),
+          backgroundColor: Colors.lightBlueAccent,
         ),
+
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Center(
             child: SingleChildScrollView(
               child: Column(
@@ -37,10 +38,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Image.asset(
-                    'assets/signup.png',
+                    'assets/signin.png',
                     height: 150,
                     width: 150,
-                    color: Colors.blueAccent,
+                    color: Colors.lightBlueAccent,
                   ),
                   const SizedBox(
                     height: 20,
@@ -58,32 +59,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     height: 20,
                   ),
                   AuthenticationButton(
-                      colour: Colors.blueAccent,
+                      colour: Colors.lightBlueAccent,
                       onpressed: () async {
                         try {
-                          final newUser =
-                              await _auth.createUserWithEmailAndPassword(
-                                  email: email!, password: password!);
-                          if (newUser != null) {
+                          final user = await _auth.signInWithEmailAndPassword(
+                              email: email!, password: password!);
+                          if (user != null) {
                             Navigator.pushNamed(context, 'welcome_screen');
                           }
-                          newUser;
                         } catch (e) {
                           print(e);
                         }
                       },
-                      title: 'Register'),
+                      title: 'Sign In'),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'Already a Member?',
+                      const Text(
+                        'Dont you have an Account?',
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'signin_screen');
+                          Navigator.pushNamed(context, 'signup_screen');
                         },
-                        child: Text('Sign In'),
+                        child: const Text('Sign Up'),
                       ),
                     ],
                   ),

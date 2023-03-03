@@ -1,9 +1,10 @@
+import 'package:expense_tracker_flutter/screens/entry_screen.dart';
 import 'package:expense_tracker_flutter/screens/home_screen.dart';
-import 'package:expense_tracker_flutter/screens/login_screen.dart';
+import 'package:expense_tracker_flutter/screens/signin_screen.dart';
 import 'package:expense_tracker_flutter/screens/signup_screen.dart';
+import 'package:expense_tracker_flutter/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 
 void main() async {
@@ -23,8 +24,10 @@ class MyApp extends StatelessWidget {
       routes: {
 
         'home_screen': (context) => const HomeScreen(),
-        'login_screen': (context) => const SignInScreen(),
+        'signin_screen': (context) => const SignInScreen(),
         'signup_screen': (context) => const SignUpScreen(),
+        'welcome_screen': (context) => const WelcomeScreen(),
+        'entry_screen': (context) => const EntryScreen(),
 
       },
     );
