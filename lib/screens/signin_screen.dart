@@ -1,3 +1,4 @@
+import 'package:expense_tracker_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:expense_tracker_flutter/widgets/email_field.dart';
@@ -20,7 +21,11 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        await Navigator.pushNamed(context, 'home_screen');
+        await Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ));
         return false;
       },
       child: Scaffold(
@@ -28,7 +33,6 @@ class _SignInScreenState extends State<SignInScreen> {
           title: const Text('Sign In Screen'),
           backgroundColor: Colors.lightBlueAccent,
         ),
-
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Center(
@@ -62,8 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       colour: Colors.lightBlueAccent,
                       onpressed: () async {
                         try {
-                          final user = await _auth.signInWithEmailAndPassword(
-                              email: email!, password: password!);
+                          final user = await _auth.signInWithEmailAndPassword(email: email!, password: password!);
                           if (user != null) {
                             Navigator.pushNamed(context, 'welcome_screen');
                           }
