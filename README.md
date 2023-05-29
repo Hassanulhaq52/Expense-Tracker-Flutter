@@ -2,4 +2,4 @@
 
 A new Flutter project.
 
-![image](https://github.com/Hassanulhaq52/Expense-Tracker-Flutter/assets/81625175/1e8eaa95-f511-46c5-99cc-855f686f8c7d)
+![Expense Tracker App](https://github.com/Hassanulhaq52/Expense-Tracker-Flutter/assets/81625175/ea836b5d-a19a-49da-a45a-eff56de8bc11)
